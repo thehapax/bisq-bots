@@ -21,33 +21,37 @@ A first version should only include bare minimum functionality.
 **Regular mode from the /start menu is currently working.**
 **inline mode for multiple _Will_ require extra work** - inline mode is most critical, but regular mode could also be released in v1 if it only requires minimal extra work
 
--**Version 2** -- bot should auto-suggest key markets to avoid user typos (if the Telegram UX makes this feasible)
+-**Version 2 - TODO** -- bot should auto-suggest key markets to avoid user typos (if the Telegram UX makes this feasible)
 -**Version 1 - Complete** key markets: btc_usd, btc_eur, xmr_btc, btc_brl, l-btc_btc, btc_gbp, bsq_bt 
     
-- **Version 2, also unclear if it is possible to make fast** see appendix below for video of UX suggestion using InlineQueryResultArticle
+- **Version 2 - TODO. also unclear if it is possible to make fast** see appendix below for video of UX suggestion using InlineQueryResultArticle
 - upshot of this approach is that results are sent with the suggestions so it's lightnin-quick 
         
  - **Version 1 - See currently deployed keyboard** --  another option is sending a custom keyboard with markets listed ther
       
 - upon specifying a market, results should include:
     - bids and asks
-    - might be nice to separate bids and asks with an InlineKeyboardMarkup, so more bids/asks can be show, but this is _not_ necessary for v1 (probably better if not included, to save time) **Version 1 - Already Complete in Backend**
-    - each offer should show: 
+    - **Version 1 - Complete in Backend** might be nice to separate bids and asks with an InlineKeyboardMarkup, so more bids/asks can be show, but this is _not_ necessary for v1 (probably better if not included, to save time) 
+    
+    - **Version 2: % and Range** each offer should show: 
         - trade size (including range, if applicable) **In Version 1** 
-        - price (in btc _and_ altcoin/fiat, including corresponding range, if applicable) **Version 2: Range** 
+        - price (in btc _and_ altcoin/fiat, including corresponding range, if applicable) 
         - ordered by spread % (if possible?) **Version 2** 
-            - need to check if api can be changed to include this in /offers endpoint **Version 2**
+            - need to check if api can be changed to include this in /offers endpoint 
 
 Sample response:
-**Version 1 - HTML works for Keyboard buttons however** 
-**ISSUE:how to get Icons and HTML to show up for Inline Queries, have not found solution**
+**Version 1 - HTML works for Keyboard buttons** 
+
+**Version 2 - ISSUE:how to get Icons and HTML to show up for Inline Queries, have not found solution**
 
 ⬇️ XMR/BTC - _Bids_ ⬇️ 
 
 💱 0.00739230 BTC (-2%)
+
 Offer Size: **13.528 XMR** / 0.01 BTC
 
 💱 0.00759230 BTC (0%)
+
 Offer Size: **136.596 XMR** / 1 BTC - **272.596 XMR** / 2 BTC
 
 ⬇️ XMR-BTC - _Asks_ ⬇️
@@ -68,6 +72,7 @@ _Note the second bid above with a range...some offers have ranges and some don't
 ## Desired Due Date
 
 **Version 1 - tuesday March 11, 2020**
+
 **Version 2 - TBD** 
 
 ## Deployment
