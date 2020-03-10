@@ -77,8 +77,9 @@ _Note the second bid above with a range...some offers have ranges and some don't
 
 ## Deployment
 
-Ideally on an existing VPS somewhere, otherwise TBD.
 **Version 1 - Already deployed on Digital Ocean VPS 60 days free credit**
+
+Ideally on an existing VPS somewhere, otherwise TBD.
 
 ## Appendix
 
