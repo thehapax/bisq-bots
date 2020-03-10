@@ -17,24 +17,33 @@ If this hypothesis is proven to be false, we should cease allocating growth reso
 A first version should only include bare minimum functionality.
 
 - one function: get offers in a particular market
+
 - inline mode is most critical, but regular mode could also be released in v1 if it only requires minimal extra work
-- bot should auto-suggest key markets to avoid user typos (if the Telegram UX makes this feasible)
-    - key markets: btc_usd, btc_eur, xmr_btc, btc_brl, l-btc_btc, btc_gbp, bsq_bt
-    - see appendix below for video of UX suggestion using InlineQueryResultArticle
-        - upshot of this approach is that results are sent with the suggestions so it's lightnin-quick
-        - another option is sending a custom keyboard with markets listed there
+**Regular mode from the /start menu is currently working. inline mode for multiple _Will_ require extra work** 
+
+-**This for Version 2** -- bot should auto-suggest key markets to avoid user typos (if the Telegram UX makes this feasible)
+- key markets: btc_usd, btc_eur, xmr_btc, btc_brl, l-btc_btc, btc_gbp, bsq_bt **Done**
+    
+- see appendix below for video of UX suggestion using InlineQueryResultArticle
+- upshot of this approach is that results are sent with the suggestions so it's lightnin-quick 
+**it is not lightning quick if there is no way to optimize bulk Inline queries, this is a todo item**
+        
+ - another option is sending a custom keyboard with markets listed ther
+ **See currently deployed keyboard**
+        
 - upon specifying a market, results should include:
     - bids and asks
-        - might be nice to separate bids and asks with an InlineKeyboardMarkup, so more bids/asks can be show, but this is _not_ necessary for v1 (probably better if not included, to save time)
+    - might be nice to separate bids and asks with an InlineKeyboardMarkup, so more bids/asks can be show, but this is _not_ necessary for v1 (probably better if not included, to save time) **Already Complete in Backend**
     - each offer should show: 
-        - trade size (including range, if applicable)
-        - price (in btc _and_ altcoin/fiat, including corresponding range, if applicable)
-        - ordered by spread % (if possible?)
-            - need to check if api can be changed to include this in /offers endpoint
+        - trade size (including range, if applicable) **In Version 1** 
+        - price (in btc _and_ altcoin/fiat, including corresponding range, if applicable) **Version 2: Range** 
+        - ordered by spread % (if possible?) **Version 2** 
+            - need to check if api can be changed to include this in /offers endpoint **Version 2**
 
 Sample response:
+**Unclear how to get Icons and HTML to show up for Inline queries, HTML works for Keyboard buttons however** 
 
-⬇️ XMR/BTC - _Bids_ ⬇️
+⬇️ XMR/BTC - _Bids_ ⬇️ 
 
 💱 0.00739230 BTC (-2%)
 
