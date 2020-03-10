@@ -38,6 +38,9 @@ A first version should only include bare minimum functionality.
         - price (in btc _and_ altcoin/fiat, including corresponding range, if applicable) 
         - ordered by spread % (if possible?) **Version 2** 
             - need to check if api can be changed to include this in /offers endpoint 
+## Further notes 
+Some API reorganization and restructuring would need to be done to make it bit more flexible than what we have currently. 
+To reduce overfetching I would need to take a look at the underlying node structure that is feeding us data. This would be a significantly more involved effort than just buildling a telegram bot. 
 
 Sample response:
 **Version 1 - HTML works for Keyboard buttons** 
@@ -68,6 +71,7 @@ _Note the second bid above with a range...some offers have ranges and some don't
 
 1. Spread percentage is not yet available in `/offers` endpoint, so probably cannot be implemented at the moment.
 2. Markdown spacing sucks, so it's hard to see that there should be no spacing between price and offer size lines in sample response above, which should make readability better.
+
 
 ## Desired Due Date
 
